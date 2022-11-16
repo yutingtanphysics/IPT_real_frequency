@@ -1,0 +1,31 @@
+#----------------   filesystem   -----------------#
+Delta.inp   |   'Delta' 		//Hybridization function for the impurity problem, this supplies the grid unless grid file is supplied
+omega.inp   |   'Grid' 			//grid to use (over-rides the grid from Delta if value is different from default)
+Gf.out   		|   'Gf-file'  	//where to output Gf
+Sigma.out   |   'Sig-file'  //where to output Sigma
+
+#----------------   SIAM   -----------------#
+2.0   |   'U'   						//on-impurity interaction
+0.01 	|   'T'   						//temperature
+1.0   |   'mu'  						//chemical potential, set to U/2 for PH-symmetric case
+0.0   |   'epsilon'   			//impurity orbital energy
+1e-3 	|   'eta'   					//broadening for G0 (not for G!)
+T     |   'UseCubicSpline' 	//use cubic spline for Kramers Kronig
+1e-12 |   'KKAccr' 					//Kramers Kronig desired accuracy
+
+
+#----------------   PH symmetry   -----------------#
+F    |   'SymmetricCase'  //Force IPT for half-filling, change to F for non-half-filled case
+1e-6 |   'Accr'   //desired accuracy for determining mu0
+F    |   'Fixmu0'  //Should set to F unless it is somehow known
+0.0  |   'mu0'  //auxillary chemical potential (non-zero when away from half filling)
+-0.5 |   'HybridBisectStart'  //Minimum mu0 of search range
+0.5  |   'HybridBisectEnd'  //Maximum mu0 of search range
+25   |   'HybridBisectMaxIts'   //Maximum Amoeba iterations for mu0 search
+T    |   'TailCorrection' //Use tail correction for evaluation of n0
+4    |   'fitorder'
+100  |   'ntail'
+
+
+#----------------   Debug   -----------------#
+T    |   'CheckSpectralWeight'
