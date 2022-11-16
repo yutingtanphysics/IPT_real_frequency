@@ -13,7 +13,7 @@
 const char *argp_program_version =
   "Real-to-Matsubara Analytic Continuation 1.0";
 const char *argp_program_bug_address =
-  "<henrytsang222@gmail.com>";
+  "<yutingtan.physics@gmail.com>";
 
 /* Program documentation. */
 static char doc[] =
